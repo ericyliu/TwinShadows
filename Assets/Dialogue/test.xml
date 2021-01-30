@@ -1,0 +1,17 @@
+<Conversation>
+	<Lines>
+		<Line speaker="A" nameAlignment="MiddleLeft"  nameHidden="false"
+          text="\8This is a test. Here is a space."/>
+		<Line speaker="B"   nameAlignment="MiddleRight" nameHidden="false"
+          text="\4This one is gonna be \1pretty slow."/>
+		<Line speaker="A" nameAlignment="MiddleLeft"  nameHidden="true" 
+          text="\7My name is missing."/>
+	<!--
+		<Line speaker="A" portraitPosition="Left" text="\\8I lingered around them,\\2 \\8under that benign &ltcolor=cyan&gtsky&lt/color&gt: \n"/>
+		<Line speaker="B" portraitPosition="Right" text="watched the moths \\5<i>fluttering</i> \\8among the <color=brown>heath and harebells</color>, \n"/>
+		<Line speaker="A" portraitPosition="Left" text="listened to the soft wind breathing through the <color=green>grass</color>,\\1   \n"/>
+		<Line speaker="B" portraitPosition="Missing" text="\\8and \\3wondered \\8how anyone could \\1<b>ever</b> \\8imagine unquiet slumbers \n"/>
+		<Line speaker="A" portraitPosition="Left" text="for the sleepers in that quiet earth."/>
+	-->
+	</Lines>
+</Conversation>
