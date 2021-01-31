@@ -15,17 +15,22 @@ public class Dialogue : MonoBehaviour
     // Pitch value is out of 100
     public enum Speaker
     {
-        A = 50,
-        B = 75,
+        Meta = 20,
+        Dad = 50,
+        Son = 51,
+        Ghost = 70,
 
         Count = -1
     }
 
+    /*
+    // not in use
     private static readonly Dictionary<Speaker, float> speakerPitchBends = new Dictionary<Speaker, float> {
         // { Name, average pitch }
         { Speaker.A, 1 },
         { Speaker.B, 2 }
     };
+    */
     #endregion
 
 
@@ -84,7 +89,7 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-    #endregion
+#endregion
     public Stack<Conversation> conversationStack;
 
     // Control
@@ -130,6 +135,7 @@ public class Dialogue : MonoBehaviour
         if (vowelClips.Count > 0 && consonantClips.Count > 0)
             Debug.Log("no consonants or maybe vowels!");
 
+        UpdateTextSpeed(5);
         LoadJSON(file);
     }
 

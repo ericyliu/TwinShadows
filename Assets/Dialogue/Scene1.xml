@@ -1,0 +1,21 @@
+<Conversation>
+	<Lines>
+    <!-- "Wake up" -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Couldn't sleep again."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="But how could I?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="It's been, what...three? Four days? Since Timmy's gone missing..."/>
+
+    <!-- Walk towards Timmy's room -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="We just moved not a week ago. Haven't even finished unpacking."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="His room. Where could he have gone? He must be so afraid."/>
+
+    <!-- Walk downstairs -->
+		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="The police haven't been any help. They completely ignore me!"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="They act like I'm not even there."/>
+
+    <!-- Walk to the front door -->
+		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Can't sleep. Don't want coffee. I just want my kid back."/>
+		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Maybe I should go out again and ask around the neighborhood."/>
+		<Line speaker="Meta"  nameAlignment="MiddleLeft" text="Take your phone out for a walk and you might find some clues."/>
+	</Lines>
+</Conversation>

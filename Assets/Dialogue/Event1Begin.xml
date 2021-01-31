@@ -1,0 +1,15 @@
+<Conversation>
+	<Lines>
+    <!-- Start event -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="I've been trying to look for clues out here,"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="but I don't really know what I'm supposed to be looking for."/>
+
+    <!-- Ghost flies by -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="What in the darn heck is that?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="A ghost? No way..."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Maybe I can ask if it knows anything."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="H-hello? Mr. Ghost?"/>
+
+    <!-- Start minigame -->
+	</Lines>
+</Conversation>

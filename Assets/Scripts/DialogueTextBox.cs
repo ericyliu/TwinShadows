@@ -8,6 +8,9 @@ public class DialogueTextBox : MonoBehaviour
 
     public Dialogue dia;
 
+    // false = IsDialogue
+    public bool IsSpeakerName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,9 @@ public class DialogueTextBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = dia.Say();
+        if (IsSpeakerName) 
+            GetComponent<Text>().text = System.Enum.GetName(typeof(Dialogue.Speaker), dia.pendingLine.speaker);
+        else
+            GetComponent<Text>().text = dia.Say();
     }
 }

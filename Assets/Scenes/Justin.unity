@@ -799,9 +799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1858a1fc7495a488ea25140f1731c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: test
+  file: Event1Intro
   state: 0
-  charPerSec: 2
+  charPerSec: 5
   realCharPerSec: 1
   pendingLine:
     speaker: 0
