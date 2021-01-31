@@ -20,7 +20,7 @@ namespace Google.Maps.Examples.Shared
     /// meters).
     /// </summary>
     public static readonly Bounds DefaultBounds =
-        new Bounds(Vector3.zero, new Vector3(100, 0, 100));
+        new Bounds(Vector3.zero, new Vector3(300, 0, 300));
 
     /// <summary>
     /// Setup default <see cref="GameObjectOptions"/>.
