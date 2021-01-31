@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     // Pitch value is out of 100
     public enum Speaker
     {
-        Meta = 20,
+        Tip = 20,
         Dad = 50,
         Son = 51,
         Ghost = 70,
@@ -92,6 +92,13 @@ public class Dialogue : MonoBehaviour
 #endregion
     public Stack<Conversation> conversationStack;
 
+    #region UI
+    public Text speakerNameText;
+    public Text dialogueText;
+    public Button continueButton;
+    #endregion
+
+
     // Control
     public string file = "test";
 
@@ -124,16 +131,17 @@ public class Dialogue : MonoBehaviour
 
 
     // Audio
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     private float wordPitchBend = 0;
     public List<AudioClip> vowelClips = new List<AudioClip>();
     public List<AudioClip> consonantClips = new List<AudioClip>();
 
     private void Start() {
-        audioSource = GetComponent<AudioSource>();
-
         if (vowelClips.Count > 0 && consonantClips.Count > 0)
             Debug.Log("no consonants or maybe vowels!");
+
+
+        continueButton.onClick.AddListener(Interact);
 
         UpdateTextSpeed(5);
         LoadJSON(file);
@@ -149,6 +157,11 @@ public class Dialogue : MonoBehaviour
     }
 
     private void Update() {
+
+        // UI
+        speakerNameText.text = System.Enum.GetName(typeof(Speaker), pendingLine.speaker);
+        speakerNameText.alignment = pendingLine.nameAlignment;
+        dialogueText.text = Say();
 
         if (state != State.Speaking)
             return;
@@ -172,6 +185,7 @@ public class Dialogue : MonoBehaviour
 
             char next = ParseNextCharacter();
 
+            // Play audio
             float perlinPitchBend = Mathf.PerlinNoise(1, Time.time);
             if (audioSource)
                 audioSource.pitch = 0.3f + ((int)pendingLine.speaker / 100.0f) + perlinPitchBend + wordPitchBend;
@@ -198,6 +212,7 @@ public class Dialogue : MonoBehaviour
                 wordPitchBend = Random.Range(-0.2f, 0.2f);
             }
         }
+
     }
 
     private char ParseNextCharacter() {
@@ -294,6 +309,11 @@ public class Dialogue : MonoBehaviour
             line += s;
         }
         return line;
+    }
+
+
+    public void ShowButton(bool NewShow) {
+        continueButton.enabled = NewShow;
     }
 
 }

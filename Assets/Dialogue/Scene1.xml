@@ -16,6 +16,6 @@
     <!-- Walk to the front door -->
 		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Can't sleep. Don't want coffee. I just want my kid back."/>
 		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Maybe I should go out again and ask around the neighborhood."/>
-		<Line speaker="Meta"  nameAlignment="MiddleLeft" text="Take your phone out for a walk and you might find some clues."/>
+		<Line speaker="Tip"  nameAlignment="MiddleLeft" text="Take your phone out for a walk and you might find some clues."/>
 	</Lines>
 </Conversation>
