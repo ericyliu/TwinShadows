@@ -49,16 +49,20 @@ public class FadeToBlack : MonoBehaviour
             a = targetAlpha;
             isFading = false;
 
-            if (targetAlpha == 1)
+            if (targetAlpha == 1) {
                 finishedFadingToBlack.Invoke();
-            else
+            }
+            else {
+                image.enabled = false;
                 finishedFadingFromBlack.Invoke();
+            }
         }
 
         image.color = new Color(0, 0, 0, a);
     }
 
     public void Fade(Type type) {
+        image.enabled = true;
         originalAlpha = (type == Type.ToBlack) ? 0 : 1;
         targetAlpha = (type == Type.ToBlack) ? 1 : 0;
         t = 0;
