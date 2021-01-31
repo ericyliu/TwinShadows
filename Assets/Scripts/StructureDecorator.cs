@@ -26,11 +26,6 @@ public class StructureDecorator : MonoBehaviour
     roads.Add(args.GameObject);
   }
 
-  public void OnStart(MapLoadStartArgs args)
-  {
-    player.transform.position = new Vector3(player.transform.position.x, 10f, player.transform.position.z);
-  }
-
   public void OnLoaded(MapLoadedArgs args)
   {
     foreach (GameObject house in houses)
