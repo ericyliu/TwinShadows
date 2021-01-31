@@ -151,6 +151,7 @@ public class Dialogue : MonoBehaviour
 
         UpdateTextSpeed(5);
         LoadJSON(file);
+        Interact();
     }
 
 
