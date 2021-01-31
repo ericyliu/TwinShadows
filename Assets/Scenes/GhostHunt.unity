@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 770624182}
   - component: {fileID: 770624181}
   m_Layer: 0
-  m_Name: MapsTest
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,7 +1049,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5e3b623ce1892491690aa9cb29b4d469,
         type: 3}
       propertyPath: m_Name
-      value: uploads_files_1832352_CartoonGhost
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 1191436167247434224, guid: 5e3b623ce1892491690aa9cb29b4d469,
         type: 3}
@@ -1144,7 +1144,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845414471}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f10ae7397aa084e0aa8f35078b231eab, type: 3}
