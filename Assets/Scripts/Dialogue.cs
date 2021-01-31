@@ -174,7 +174,6 @@ public class Dialogue : MonoBehaviour
             return;
 
         if (fastForward) {
-            print("ff");
             while (pendingLine.text.Length > 0) {
                 ParseNextCharacter();
             }
