@@ -35,12 +35,10 @@ public class StructureDecorator : MonoBehaviour
   {
     foreach (GameObject house in houses)
     {
-      Debug.Log(roads.Count);
       GameObject closestRoad = GetClosestRoad(house);
-      Debug.Log(house);
-      Debug.Log(closestRoad);
       house.transform.LookAt(closestRoad.transform);
     }
+    player.transform.LookAt(GetClosestRoad(player).transform);
   }
 
   void CreateRandomHouse(GameObject parent)
@@ -51,11 +49,11 @@ public class StructureDecorator : MonoBehaviour
     houses.Add(house);
   }
 
-  GameObject GetClosestRoad(GameObject house)
+  GameObject GetClosestRoad(GameObject subject)
   {
     GameObject bestTarget = null;
     float closestDistanceSqr = Mathf.Infinity;
-    Vector3 currentPosition = house.transform.position;
+    Vector3 currentPosition = subject.transform.position;
     foreach (GameObject potentialTarget in roads)
     {
       Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
