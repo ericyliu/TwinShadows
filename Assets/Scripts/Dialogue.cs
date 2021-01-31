@@ -97,9 +97,12 @@ public class Dialogue : MonoBehaviour
     public Stack<Conversation> conversationStack;
 
     #region UI
+    // - Button
+    //   - speaker text
+    //   - dialogue text
+    public Button continueButton;
     public Text speakerNameText;
     public Text dialogueText;
-    public Button continueButton;
     #endregion
 
 
@@ -165,12 +168,13 @@ public class Dialogue : MonoBehaviour
         speakerNameText.text = System.Enum.GetName(typeof(Speaker), pendingLine.speaker);
         speakerNameText.alignment = pendingLine.nameAlignment;
         dialogueText.text = Say();
-        ShowButton(state != State.WaitingForEvent);
+       // ShowButton(state != State.WaitingForEvent);
 
         if (state != State.Speaking)
             return;
 
         if (fastForward) {
+            print("ff");
             while (pendingLine.text.Length > 0) {
                 ParseNextCharacter();
             }
@@ -321,7 +325,7 @@ public class Dialogue : MonoBehaviour
     }
 
 
-    public void ShowButton(bool NewShow) {
+    public void Show(bool NewShow) {
         continueButton.enabled = NewShow;
         continueButton.gameObject.SetActive(NewShow);
     }

@@ -17,7 +17,6 @@ public class Level1 : MonoBehaviour
     
     public State state;
 
-    public SplineWalker cam;
     public Dialogue dia;
     public FadeToBlack fader;
 
@@ -25,14 +24,11 @@ public class Level1 : MonoBehaviour
     public Transform InFrontOfStairs;
     public Transform BottomOfStairs;
     public Transform InFrontOfDoor;
-
-    bool willTP = false;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        dia.continueButton.onClick.AddListener(OnContinueDialogue);
         dia.waitingForEvent.AddListener(OnDialogueWaitingForEvent);
         fader.finishedFadingToBlack.AddListener(OnFadedToBlack);
         fader.finishedFadingFromBlack.AddListener(OnFadedFromBlack);
@@ -53,6 +49,8 @@ public class Level1 : MonoBehaviour
         // Fade back in unless done
         if (state != State.Leaving)
             fader.Fade(FadeToBlack.Type.FromBlack);
+
+        dia.Show(false);
 
         switch (state) {
             case State.DialogueWakingUp:
@@ -92,29 +90,7 @@ public class Level1 : MonoBehaviour
 
     void OnFadedFromBlack() {
         dia.Interact();
+        dia.Show(true);
     }
 
-    void OnContinueDialogue() {
-        return;
-
-        switch (state) {
-            // "couldn't sleep again"
-            // start getting out of bed when dialogue starts
-            case State.DialogueWakingUp:
-                fader.Fade(FadeToBlack.Type.ToBlack);
-                break;
-
-            // "his room"
-            case State.DialogueSonsRoom:
-                break;
-
-            // "can't sleep. don't want coffee"
-            case State.DialogueDownstairs:
-                break;
-
-            // "maybe i should go out again"
-            case State.Leaving:
-                break;
-        }
-    }
 }
