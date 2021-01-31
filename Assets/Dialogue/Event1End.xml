@@ -21,6 +21,6 @@
 
     <!-- Back home -->
 		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="What a bizarre day. I'm actually exhausted."/>
-		<Line speaker="Tip"  nameAlignment="MiddleLeft" text="Maybe you can for another walk tomorrow and find out more."/>
+		<Line speaker="Tip"   nameAlignment="MiddleLeft" text="Maybe you can go for another walk tomorrow and find out more."/>
 	</Lines>
 </Conversation>

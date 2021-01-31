@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
@@ -15,7 +16,7 @@ public class Dialogue : MonoBehaviour
     // Pitch value is out of 100
     public enum Speaker
     {
-        Tip = 20,
+        Tip = 300,
         Dad = 50,
         Son = 51,
         Ghost = 70,
@@ -53,6 +54,9 @@ public class Dialogue : MonoBehaviour
 
             [XmlAttribute("waits")]
             public bool waits;
+
+            [XmlAttribute("precedesEvent")]
+            public bool precedesEvent;
 
             [XmlAttribute("text")]
             public string text;
@@ -113,6 +117,8 @@ public class Dialogue : MonoBehaviour
     }
     public State state;// { get; private set; }
 
+    public UnityEvent waitingForEvent = new UnityEvent();
+
     // Text speed
     public const float textSpeedSlow = 0.5f;
     public const float textSpeedNormal = 1.0f;
@@ -137,9 +143,6 @@ public class Dialogue : MonoBehaviour
     public List<AudioClip> consonantClips = new List<AudioClip>();
 
     private void Start() {
-        if (vowelClips.Count > 0 && consonantClips.Count > 0)
-            Debug.Log("no consonants or maybe vowels!");
-
 
         continueButton.onClick.AddListener(Interact);
 
@@ -162,6 +165,7 @@ public class Dialogue : MonoBehaviour
         speakerNameText.text = System.Enum.GetName(typeof(Speaker), pendingLine.speaker);
         speakerNameText.alignment = pendingLine.nameAlignment;
         dialogueText.text = Say();
+        ShowButton(state != State.WaitingForEvent);
 
         if (state != State.Speaking)
             return;
@@ -170,7 +174,9 @@ public class Dialogue : MonoBehaviour
             while (pendingLine.text.Length > 0) {
                 ParseNextCharacter();
             }
-            state = State.WaitingForNextLine;
+            state = pendingLine.precedesEvent ? State.WaitingForEvent : State.WaitingForNextLine;
+            if (state == State.WaitingForEvent)
+                waitingForEvent.Invoke();
             return;
         }
 
@@ -178,7 +184,9 @@ public class Dialogue : MonoBehaviour
             nextCharTimer -= Time.deltaTime;
         }
         else if (pendingLine.text.Length == 0) {
-            state = State.WaitingForNextLine;
+            state = pendingLine.precedesEvent ? State.WaitingForEvent : State.WaitingForNextLine;
+            if (state == State.WaitingForEvent)
+                waitingForEvent.Invoke();
         }
         else {
             nextCharTimer += 1.0f / realCharPerSec;
@@ -186,9 +194,9 @@ public class Dialogue : MonoBehaviour
             char next = ParseNextCharacter();
 
             // Play audio
-            float perlinPitchBend = Mathf.PerlinNoise(1, Time.time);
+            float perlinPitchBend = Mathf.PerlinNoise(1, Time.time) / 3;
             if (audioSource)
-                audioSource.pitch = 0.3f + ((int)pendingLine.speaker / 100.0f) + perlinPitchBend + wordPitchBend;
+                audioSource.pitch = 0.2f + 2 * ((int)pendingLine.speaker / 100.0f) + perlinPitchBend + wordPitchBend;
 
             if (char.IsLetter(next)) {
                 switch (char.ToLower(next)) {
@@ -278,6 +286,7 @@ public class Dialogue : MonoBehaviour
 
             case State.Idle:
             case State.WaitingForNextLine:
+            case State.WaitingForEvent:
                 fastForward = false;
                 SpeakNextLine();
                 break;
@@ -314,6 +323,7 @@ public class Dialogue : MonoBehaviour
 
     public void ShowButton(bool NewShow) {
         continueButton.enabled = NewShow;
+        continueButton.gameObject.SetActive(NewShow);
     }
 
 }

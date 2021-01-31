@@ -10,10 +10,15 @@ public class SplineWalker : MonoBehaviour {
 
 	public SplineWalkerMode mode;
 
+	public bool isPaused = true;
+
 	private float progress;
 	private bool goingForward = true;
 
 	private void Update () {
+		if (isPaused)
+			return;
+
 		if (goingForward) {
 			progress += Time.deltaTime / duration;
 			if (progress > 1f) {
@@ -40,7 +45,14 @@ public class SplineWalker : MonoBehaviour {
 		Vector3 position = spline.GetPoint(progress);
 		transform.localPosition = position;
 		if (lookForward) {
-			transform.LookAt(position + spline.GetDirection(progress));
+			Quaternion lookOnLook = Quaternion.LookRotation(spline.GetDirection(progress));
+			transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
 		}
 	}
+
+	void StartNewPath(BezierSpline newPath, bool startPaused) {
+		spline = newPath;
+		progress = 0;
+		isPaused = startPaused;
+    }
 }

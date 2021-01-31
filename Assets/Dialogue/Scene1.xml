@@ -1,21 +1,26 @@
 <Conversation>
 	<Lines>
-    <!-- "Wake up" -->
+    <!-- Wake up -->
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Couldn't sleep again."/>
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="But how could I?"/>
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="It's been, what...three? Four days? Since Timmy's gone missing..."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="We just moved not a week ago. Haven't even finished unpacking." precedesEvent="true"/>
 
-    <!-- Walk towards Timmy's room -->
-    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="We just moved not a week ago. Haven't even finished unpacking."/>
+    <!-- Reach son's room -->
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="His room. Where could he have gone? He must be so afraid."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="I don't know what to do." precedesEvent="true"/>
 
-    <!-- Walk downstairs -->
+    <!-- Reach stairs -->
 		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="The police haven't been any help. They completely ignore me!"/>
-    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="They act like I'm not even there."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="They act like I'm not even there." precedesEvent="true"/>
 
-    <!-- Walk to the front door -->
-		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Can't sleep. Don't want coffee. I just want my kid back."/>
+    <!-- Reach downstairs -->
+		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Can't sleep."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Don't want coffee."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="...I just want my kid back." precedesEvent="true"/>
+
+    <!-- Reach frontdoor -->
 		<Line speaker="Dad"   nameAlignment="MiddleLeft" text="Maybe I should go out again and ask around the neighborhood."/>
-		<Line speaker="Tip"  nameAlignment="MiddleLeft" text="Take your phone out for a walk and you might find some clues."/>
+		<Line speaker="Tip"  nameAlignment="MiddleLeft" text="Take your phone out for a walk and you might find some clues." precedesEvent="true"/>
 	</Lines>
 </Conversation>
