@@ -18,7 +18,9 @@ public class Dialogue : MonoBehaviour
     {
         Tip = 300,
         Dad = 50,
-        Son = 51,
+        Tim = 51,
+        Lady = 130,
+        Child = 200,
         Ghost = 70,
 
         Count = -1

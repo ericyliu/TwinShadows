@@ -1,0 +1,46 @@
+<Conversation>
+	<Lines>
+    <!-- Finish minigame -->
+		<Line speaker="Tim"   nameAlignment="MiddleRight" text="...and what do you know, it was Johnson. Of course it was."/>
+		<Line speaker="Lady"  nameAlignment="MiddleLeft"  text="Johnson again dear?"/>
+    <Line speaker="Lady"  nameAlignment="MiddleLeft"  text="Who's a hungry boy? Can you say broccoli?"/>
+    <Line speaker="Child" nameAlignment="MiddleRight" text="broccoli!"/>
+    <Line speaker="Tim"   nameAlignment="MiddleRight" text="Yes, I'm getting really sick of that guy. What an asshole."/>
+    <Line speaker="Child" nameAlignment="MiddleRight" text="asshole!"/>
+    <Line speaker="Lady"  nameAlignment="MiddleLeft"  text="Oh come on. Language, Tim."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="...Timothy?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="Timmy? Is that you?" precedesEvent="true"/>
+
+    <!-- Walking to the den -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="A ghost told me I'd find you here. It's crazy."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="But what's going on? You must be thirty."/>
+    <Line speaker="Tim"   nameAlignment="MiddleRight" text="Sorry Joan. He just really riles me up."/>
+    <Line speaker="Lady"  nameAlignment="MiddleLeft"  text="It's all right. Just take a rest, I'll do the dishes."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="Hey, Timmy, let's go back home."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="I'll tell you all about the ghost."/>
+    <Line speaker="Tim"   nameAlignment="MiddleRight" text="Is there a draft in here? I just felt a chill down my spine."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="Timmy, are you listening? We have to" precedesEvent="true"/>
+
+    <!-- Son hold's dad photo next to urn -->
+    <Line speaker="Tim"   nameAlignment="MiddleRight" text="Sigh. Dad, what would you do about Johnson?"/>
+    <Line speaker="Tim"   nameAlignment="MiddleRight" text="You and mom were always so level-headed. I think I missed the memo when I was born."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="...what?"/>
+
+    <!-- Son sits down to watch tv -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="...I don't understand. You drew this last year."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="Why is this here? What is this urn?" precedesEvent="true"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="\2........."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text=".........\5" precedesEvent="true"/>
+
+    <!-- Shot from far away from the family -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="Timmy."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="Look at you. You're all grown up."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="You have a loving family."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft"  text="...I'll leave you be now. Goodbye son." precedesEvent="true"/>
+
+    <!-- Speaking in the dark -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="I suppose it's time to go."/>
+    
+    
+	</Lines>
+</Conversation>
