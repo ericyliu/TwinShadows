@@ -44,6 +44,7 @@ public class Level1 : MonoBehaviour
   void OnDialogueWaitingForEvent()
   {
     fader.Fade(FadeToBlack.Type.ToBlack);
+    dia.EnableButton(false);
   }
 
   void OnFadedToBlack()
@@ -96,6 +97,7 @@ public class Level1 : MonoBehaviour
   {
     dia.Interact();
     dia.Show(true);
-  }
+    dia.EnableButton(true);
+    }
 
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GhostHuntLevel : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class GhostHuntLevel : MonoBehaviour
       Debug.Log("level 3 time");
       dialogue.Show(false);
       fader.Fade(FadeToBlack.Type.ToBlack);
+      SceneManager.LoadScene("SonsHouse");
       return;
     }
   }

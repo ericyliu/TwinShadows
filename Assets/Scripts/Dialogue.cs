@@ -326,7 +326,9 @@ public class Dialogue : MonoBehaviour
         return line;
     }
 
-
+    public void EnableButton(bool NewEnable) {
+        continueButton.enabled = NewEnable;
+    }
     public void Show(bool NewShow) {
         continueButton.enabled = NewShow;
         continueButton.gameObject.SetActive(NewShow);

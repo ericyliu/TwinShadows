@@ -41,6 +41,7 @@ public class SonsHouseLevel : MonoBehaviour
 
     void OnDialogueWaitingForEvent() {
         fader.Fade(FadeToBlack.Type.ToBlack);
+        dia.EnableButton(false);
     }
 
     void OnFadedToBlack() {
@@ -79,6 +80,7 @@ public class SonsHouseLevel : MonoBehaviour
     }
 
     void OnFadedFromBlack() {
+        dia.EnableButton(true);
         dia.Interact();
     }
 }
