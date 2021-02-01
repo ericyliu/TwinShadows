@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Ghost : MonoBehaviour
 {
@@ -14,8 +15,10 @@ public class Ghost : MonoBehaviour
   public ParticleSystem mouseHitParticle;
   public Animator animator;
   public bool isHit = false;
+  public bool started = false;
   public int level = 1;
   public AudioSource ghostHitSound;
+  public UnityEvent onFinish = new UnityEvent();
 
   // Start is called before the first frame update
   void Start()
@@ -32,7 +35,7 @@ public class Ghost : MonoBehaviour
 
   void GhostMovement()
   {
-    if (isHit) return;
+    if (isHit || !started) return;
     if (Vector3.Equals(destination, Vector3.zero))
     {
       destination = new Vector3(Random.Range(xBounds.x, xBounds.y), Random.Range(yBounds.x, yBounds.y), Random.Range(zBounds.x, zBounds.y));
@@ -49,7 +52,7 @@ public class Ghost : MonoBehaviour
 
   void GhostTouch()
   {
-    if (!Input.GetMouseButtonDown(0)) return;
+    if (!Input.GetMouseButtonDown(0) || !started) return;
     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
     RaycastHit[] hits = Physics.RaycastAll(ray);
     if (hits.Length > 0)
@@ -69,7 +72,7 @@ public class Ghost : MonoBehaviour
           animator.Play("Hit");
           ghostHitSound.Play();
           level += 1;
-          if (level > 3) StartEndSceneDialogue();
+          if (level > 3) EndHunt();
         }
       }
       (ghostHit ? mouseHitParticle : mouseMissParticle).Play();
@@ -77,8 +80,11 @@ public class Ghost : MonoBehaviour
 
   }
 
-  void StartEndSceneDialogue()
+  void EndHunt()
   {
-    Debug.Log("start end scene");
+    transform.localPosition = new Vector3(0, 0, 4);
+    started = false;
+    transform.localRotation = Quaternion.Euler(0, 180, 0);
+    onFinish.Invoke();
   }
 }

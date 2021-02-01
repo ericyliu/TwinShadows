@@ -8,7 +8,8 @@
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="What in the darn heck is that?"/>
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="A ghost? No way..."/>
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Maybe I can ask if it knows anything."/>
-    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="H-hello? Mr. Ghost?" precedesEvent="true"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="H-hello? Mr. Ghost?" />
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="" precedesEvent="true"/>
 
     <!-- Start minigame -->
 
@@ -33,7 +34,7 @@
 
     <!-- Back home -->
     <Line speaker="Dad"   nameAlignment="MiddleLeft" text="What a bizarre day. I'm actually exhausted."/>
-    <Line speaker="Tip"   nameAlignment="MiddleLeft" text="Maybe you can go for another walk tomorrow and find out more."/>
+    <Line speaker="Tip"   nameAlignment="MiddleLeft" text="Maybe you can go for another walk tomorrow and find out more." precedesEvent="true"/>
 
   </Lines>
 </Conversation>
