@@ -87,12 +87,18 @@ public class Dialogue : MonoBehaviour
             index = 0;
         }
 
-        public static Conversation LoadXml(string path) {
+        public static Conversation LoadXml(string xmlText) {
 
             XmlSerializer serializer = new XmlSerializer(typeof(Conversation));
+            using (var reader = new System.IO.StringReader(xmlText)) {
+                return serializer.Deserialize(reader) as Conversation;
+            }
+
+            /*
             using (FileStream stream = new FileStream(path, FileMode.Open)) {
                 return (Conversation)serializer.Deserialize(stream);
             }
+            */
         }
     }
 #endregion
@@ -158,9 +164,11 @@ public class Dialogue : MonoBehaviour
 
 
     private void LoadJSON(string file) {
+        //Load a text file (Assets/Resources/Text/textFile01.txt)
+        TextAsset textFile = Resources.Load<TextAsset>("Dialogue/" + file);
         string path = Path.Combine(Application.dataPath, "Dialogue/" + file + ".xml");
         conversationStack = new Stack<Conversation>();
-        Conversation c = Conversation.LoadXml(path);
+        Conversation c = Conversation.LoadXml(textFile.text);
 
         conversationStack.Push(c);
     }

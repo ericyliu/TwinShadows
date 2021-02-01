@@ -1,0 +1,40 @@
+<Conversation>
+	<Lines>
+    <!-- Start event -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="I've been trying to look for clues out here,"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="but I don't really know what I'm supposed to be looking for."/>
+
+    <!-- Ghost flies by -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="What in the darn heck is that?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="A ghost? No way..."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Maybe I can ask if it knows anything."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="H-hello? Mr. Ghost?" />
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="" precedesEvent="true"/>
+
+    <!-- Start minigame -->
+
+    <!-- Finish minigame -->
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="You're so annoying! Why won't you leave me alone?"/>
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="What do you want!?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Please, I'm looking for my son."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="He's only 10. He went out the other night and hasn't returned."/>
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="..."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="What is it?"/>
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="How long has he been gone?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="He just left the house yesterday! Please, he's probably really scared being out on his own right now."/>
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="...is his name Timothy?"/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Yes! How did you know? Do you know him? Do I know you?"/>
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="...I've just seen him play around in the neighborhood."/>
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="He looks a bit older than 10 though."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Timmy is just tall for his age. Please, you have to tell me where he went."/>
+
+    <!-- Pan camera towards next destination, maybe show a compass? -->
+    <Line speaker="Ghost" nameAlignment="MiddleRight" text="Ok...I recall seeing him coming from that direction."/>
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="Thank you so much. I'll come back and repay you once I find him."/>
+
+    <!-- Back home -->
+    <Line speaker="Dad"   nameAlignment="MiddleLeft" text="What a bizarre day. I'm actually exhausted."/>
+    <Line speaker="Tip"   nameAlignment="MiddleLeft" text="" precedesEvent="true"/>
+
+  </Lines>
+</Conversation>
