@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/DadsHouse.unity
+    guid: fc3c3f12830715b469caba1e17c733eb
+  - enabled: 1
+    path: Assets/Scenes/GhostHunt.unity
+    guid: 9b49400c893894a79bd8c643ee23cda0
   m_configObjects: {}

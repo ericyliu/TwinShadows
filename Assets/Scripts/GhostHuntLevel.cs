@@ -12,12 +12,14 @@ public class GhostHuntLevel : MonoBehaviour
   public Dialogue dialogue;
   public State state = State.DialogueStart;
   public Ghost ghost;
+  public FadeToBlack fader;
 
   // Start is called before the first frame update
   void Start()
   {
     dialogue.waitingForEvent.AddListener(OnNextState);
     ghost.onFinish.AddListener(OnNextState);
+    fader.Fade(FadeToBlack.Type.FromBlack);
   }
 
   void OnNextState()
@@ -39,13 +41,9 @@ public class GhostHuntLevel : MonoBehaviour
     if (state == State.DialogueFinish)
     {
       Debug.Log("level 3 time");
+      dialogue.Show(false);
+      fader.Fade(FadeToBlack.Type.ToBlack);
       return;
     }
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
   }
 }
